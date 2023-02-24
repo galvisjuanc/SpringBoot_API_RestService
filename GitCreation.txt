@@ -1,0 +1,36 @@
+Steps to create an IntelliJ or VSC Project:
+
+1. Create a new project in IntelliJ or VSC
+2. Select the language (Java, Gradle, Maven, etc)
+3. Assign the name (This name must be different from the one that will be created in Github)
+4. Create a new file README.me to explain better the code
+
+Steps to create a local repository:
+
+1. Type git init in the terminal
+2. Type git add * (This will add all the files created before)
+3. Type git commit -m "Initial Commit"
+4. Type git branch -M main (This will change the name of the branch. Git creates a Master branch but now, this needs to be changed to Main).
+5. Type git status to verify if there is something else we need to add. If that's so, type git add *
+6. Type git commit -m "add new file"
+7. Type git remote add origin https://github.com/galvisjuanc/SortingMethods.git --> after the origin, the clone can change!!
+8. Type git push -u origin main
+9. Type git push -u origin development to update the remote branch with your local branch
+
+Doing the steps mentioned lines above, you will see all you did on IntelliJ in Github.
+
+Remember to use git fetch to download any remote change to your project.
+
+…or create a new repository on the command line
+echo "# SpringBoot_API_RestService" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/galvisjuanc/SpringBoot_API_RestService.git
+git push -u origin main
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/galvisjuanc/SpringBoot_API_RestService.git
+git branch -M main
+git push -u origin main
