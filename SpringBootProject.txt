@@ -1,0 +1,13 @@
+To create a Get Request that returns you info about a specific greeting, you need:
+
+1. Create the Collection in Postman and the Get Request.
+2. Create a new folder or package in the main folder that has the controller.
+3. Create a new folder that has the entity or bean.
+4. In the controller, the annotation @RestController will call the entity info and the request created in postman.
+5. The @Autowired will be used to create by default a constructor with the getters and setters. Save code with this annotation.
+6. The service is @GetMapping with the name of the request inside the parenthesis.
+7. This service will return an entity info. That's why the method will be called as the Entity and has to return that as well.
+8. After adding the attributes and methods of the entity, in the controller, we can set the info we want to show in the request.
+
+NOTE: This is different when the JPA is included in the project (Controller, Repository, Service, ServiceImpl and Entity or Bean) are the difference 
+between this simple greeting request and a JPA implementation.
