@@ -1,0 +1,12 @@
+SETUP JPA Repository and its Mapping Beans
+
+1. Create database and table to add the data from Service.
+2. Define MySQL Properties in SpringBoot application-properties file.
+3. Get JPA and MySQL Dependencies in POM.xml.
+4. Create Mapping Entity Bean for the table which we need to map.
+5. Define Repository Interface by extending JPARepository Interface.
+6. Add JPA Hibernate Properties into application-properties file.
+7. Understand CRUD operations of JPA Repository with example
+
+MYSQL does not run automatically from DATAGRIP. It is neccesary to connect to localhost (also, that localhost needs
+to be run before configuring the datasource in the IDE).
