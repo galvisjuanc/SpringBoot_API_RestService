@@ -1,0 +1,27 @@
+AddBook Api Contract:
+
+HTTP Request Type --> POST
+Name of the endpoint --> http://localhost:8080/addBook
+
+The resource in this case is --> /addBook
+
+Body/Payload in Postman:
+{
+    "isbn" : "studioghibi",
+    "aisle" : 2023,
+    "author" : "Freda Godofreda",
+    "book_name" : "Best Songs Ever" 
+}
+
+Logic Implementation: Book should be added to info_books table. On Success, it should show below json response to user:
+Response in Postman (201):
+{
+    "msg" : "Success Book is Added",
+    "id" : "studioghibi2023"
+}
+
+If book is already present in the table, then it show this response instead:
+Response in Postman (202):
+{
+    "msg" : "Book already exists in the DB"
+}
