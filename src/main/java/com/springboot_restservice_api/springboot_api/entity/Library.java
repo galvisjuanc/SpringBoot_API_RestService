@@ -25,7 +25,7 @@ public class Library {
     @Column(name="author")
     private String author;
 
-    public String getBookName(){return book_name;}
+    public String getBook_name(){return book_name;}
 
     public String getId() {return id;}
 
