@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.springboot_restservice_api.springboot_api.entity.Library;
 
 @Repository
-public interface LibraryRepository extends JpaRepository <Library, String>{
+public interface LibraryRepository extends JpaRepository <Library, String>, LibraryRepositoryCustom{
     
 }
