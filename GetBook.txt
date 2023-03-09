@@ -1,4 +1,4 @@
-GetBook Api Contract:
+GetBookById Api Contract:
 
 HTTP Request Type --> GET
 Name of the endpoint --> http://localhost:8080/getBooks/{ID}
@@ -16,3 +16,33 @@ Response in Postman (200):
     "author" : "Freda Godofreda",
     "book_name" : "Best Songs Ever" 
 }
+
+If the book does not exist, a new error should appear, instead of a 500 http internal server error.
+
+GetBookByAuthor Api Contract: 
+
+HTTP Request Type --> GET
+Name of the endpoint --> http://localhost:8080/getBooks/author?authorname=Freda Godofreda
+
+The resource in this case is --> /getBooks/author?authorname=Freda Godofreda
+Logic Implementation: Find the book details from database based on the author provided in input and 
+give the response to user in Json with all fields of the Book retrieved. If the author has more than one, 
+the books should be shown in response.
+
+Response in Postman (200):
+[
+    {
+        "book_name": "Best Songs Ever Vol 2",
+        "id": "studioghibi2020",
+        "isbn": "studioghibi",
+        "aisle": 2020,
+        "author": "Freda Godofreda"
+    },
+    {
+        "book_name": "Best Songs Ever",
+        "id": "studioghibi2023",
+        "isbn": "studioghibi",
+        "aisle": 2023,
+        "author": "Freda Godofreda"
+    }
+]
