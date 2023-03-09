@@ -1,0 +1,18 @@
+GetBook Api Contract:
+
+HTTP Request Type --> GET
+Name of the endpoint --> http://localhost:8080/getBooks/{ID}
+
+The resource in this case is --> /getBooks/{ID}
+
+Logic Implementation: Find the book details from DB based on the ID provided in input 
+and give the response to user in Json with all fields of the Book retrieved
+
+Response in Postman (200):
+{
+    "id" : "studioghibi2023",
+    "isbn" : "studioghibi",
+    "aisle" : 2023,
+    "author" : "Freda Godofreda",
+    "book_name" : "Best Songs Ever" 
+}
