@@ -1,0 +1,57 @@
+2023-03-10T09:31:22.742-05:00  INFO 5212 --- [main] c.s.s.SpringbootApiApplication           : Starting SpringbootApiApplication using Java 17.0.6 with PID 5212 (C:\Users\galvi\Documents\Java\SpringBoot_RestServices\springboot_api\target\classes started by galvi in C:\Users\galvi\Documents\Java\SpringBoot_RestServices\springboot_api)
+2023-03-10T09:31:22.746-05:00  INFO 5212 --- [main] c.s.s.SpringbootApiApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-03-10T09:31:23.255-05:00  INFO 5212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-10T09:31:23.346-05:00  INFO 5212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 1 JPA repository interfaces.
+2023-03-10T09:31:23.939-05:00  INFO 5212 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-10T09:31:23.952-05:00  INFO 5212 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-10T09:31:23.952-05:00  INFO 5212 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-10T09:31:24.051-05:00  INFO 5212 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-10T09:31:24.052-05:00  INFO 5212 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1251 ms
+2023-03-10T09:31:24.214-05:00  INFO 5212 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-10T09:31:24.269-05:00  INFO 5212 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-03-10T09:31:24.485-05:00  INFO 5212 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-10T09:31:24.725-05:00  INFO 5212 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@11148dc2
+2023-03-10T09:31:24.727-05:00  INFO 5212 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-10T09:31:24.788-05:00  INFO 5212 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-03-10T09:31:25.386-05:00  INFO 5212 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-10T09:31:25.394-05:00  INFO 5212 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-10T09:31:25.658-05:00  WARN 5212 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-03-10T09:31:25.953-05:00  INFO 5212 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-03-10T09:31:25.962-05:00  INFO 5212 --- [main] c.s.s.SpringbootApiApplication           : Started SpringbootApiApplication in 3.611 seconds (process running for 3.939)
+2023-03-10T09:31:35.857-05:00  INFO 5212 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-10T09:31:35.857-05:00  INFO 5212 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-10T09:31:35.859-05:00  INFO 5212 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-10T09:31:36.015-05:00  INFO 5212 --- [http-nio-8080-exec-1] c.s.s.controller.LibraryController       : Book do no exists yet. Creating a new one
+2023-03-10T09:31:37.739-05:00  INFO 5212 --- [http-nio-8080-exec-3] c.s.s.controller.LibraryController       : Skipping creating because the book already exists in DB.
+2023-03-10T09:31:48.317-05:00  INFO 5212 --- [http-nio-8080-exec-4] c.s.s.controller.LibraryController       : Sending all books stored in the DB.
+2023-03-10T09:32:24.029-05:00  INFO 5212 --- [http-nio-8080-exec-5] c.s.s.controller.LibraryController       : Book is being deleted right now.
+2023-03-10T09:35:13.383-05:00  INFO 9720 --- [main] c.s.s.SpringbootApiApplication           : Starting SpringbootApiApplication using Java 17.0.6 with PID 9720 (C:\Users\galvi\Documents\Java\SpringBoot_RestServices\springboot_api\target\classes started by galvi in C:\Users\galvi\Documents\Java\SpringBoot_RestServices\springboot_api)
+2023-03-10T09:35:13.388-05:00  INFO 9720 --- [main] c.s.s.SpringbootApiApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-03-10T09:35:14.051-05:00  INFO 9720 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-10T09:35:14.123-05:00  INFO 9720 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 1 JPA repository interfaces.
+2023-03-10T09:35:14.813-05:00  INFO 9720 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-10T09:35:14.822-05:00  INFO 9720 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-10T09:35:14.823-05:00  INFO 9720 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-10T09:35:14.925-05:00  INFO 9720 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-10T09:35:14.926-05:00  INFO 9720 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1483 ms
+2023-03-10T09:35:15.189-05:00  INFO 9720 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-10T09:35:15.321-05:00  INFO 9720 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-03-10T09:35:15.641-05:00  INFO 9720 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-10T09:35:15.889-05:00  INFO 9720 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7dd45c93
+2023-03-10T09:35:15.890-05:00  INFO 9720 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-10T09:35:15.952-05:00  INFO 9720 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-03-10T09:35:16.629-05:00  INFO 9720 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-10T09:35:16.639-05:00  INFO 9720 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-10T09:35:16.905-05:00  WARN 9720 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-03-10T09:35:17.178-05:00  WARN 9720 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: f8df5ca4-360e-42e9-94f4-760876fa304e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-03-10T09:35:17.312-05:00  INFO 9720 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@44d6f9cf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@34f32575, org.springframework.security.web.context.SecurityContextHolderFilter@62f73b0c, org.springframework.security.web.header.HeaderWriterFilter@693ed09d, org.springframework.security.web.csrf.CsrfFilter@24fc9aa5, org.springframework.security.web.authentication.logout.LogoutFilter@612531a3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@21f0cc97, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4a65c40, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@54224125, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@341889a1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1d45c4b7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4626f584, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c013560, org.springframework.security.web.access.ExceptionTranslationFilter@7683d632, org.springframework.security.web.access.intercept.AuthorizationFilter@8a7cd7c]
+2023-03-10T09:35:17.387-05:00  INFO 9720 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-03-10T09:35:17.394-05:00  INFO 9720 --- [main] c.s.s.SpringbootApiApplication           : Started SpringbootApiApplication in 4.458 seconds (process running for 4.822)
+2023-03-10T09:37:06.783-05:00  INFO 9720 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-10T09:37:06.784-05:00  INFO 9720 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-10T09:37:06.785-05:00  INFO 9720 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms

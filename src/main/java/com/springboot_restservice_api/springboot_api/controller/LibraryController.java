@@ -2,6 +2,8 @@ package com.springboot_restservice_api.springboot_api.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -30,6 +32,8 @@ public class LibraryController {
     @Autowired
     LibraryService libraryService;
 
+    private static final Logger logger = LoggerFactory.getLogger(LibraryController.class);
+
     @PostMapping("/addBook")
     public ResponseEntity<AddResponse> addBookImplementation(@RequestBody Library library){
         
@@ -38,7 +42,8 @@ public class LibraryController {
         String idBook = libraryService.buildId(library.getIsbn(),library.getAisle());
         libraryService.checkBookAlreadyExists(idBook);
 
-        if (!libraryService.checkBookAlreadyExists(idBook)){    
+        if (!libraryService.checkBookAlreadyExists(idBook)){   
+            logger.info("Book do no exists yet. Creating a new one"); 
             library.setId(idBook);
             libraryRepository.save(library);
     
@@ -50,6 +55,7 @@ public class LibraryController {
             return new ResponseEntity<AddResponse>(addResponse, httpHeaders, HttpStatus.CREATED);
         }
         else {
+            logger.info("Skipping creating because the book already exists in DB.");
             addResponse.setMsg("Book already exists");
             addResponse.setId(idBook);
             return new ResponseEntity<AddResponse>(addResponse, HttpStatus.ACCEPTED);
@@ -74,6 +80,7 @@ public class LibraryController {
 
     @GetMapping("/getBooks")
     public List<Library> getAllBooks(){
+        logger.info("Sending all books stored in the DB.");
         return libraryRepository.findAll();
     }
 
@@ -87,6 +94,7 @@ public class LibraryController {
         libraryFoundToBeUpdated.setBook_name(library.getBook_name());
 
         libraryRepository.save(libraryFoundToBeUpdated);
+        logger.info("Book was updates successfully");
 
         return new ResponseEntity<Library>(libraryFoundToBeUpdated,HttpStatus.OK);
     }
@@ -96,6 +104,7 @@ public class LibraryController {
 
         Library libraryToBeDeleted = libraryRepository.findById(library.getId()).get();
         libraryRepository.delete(libraryToBeDeleted);
+        logger.info("Book is being deleted right now.");
         return new ResponseEntity<>("Book was deleted successfully", HttpStatus.CREATED);
     }
 
