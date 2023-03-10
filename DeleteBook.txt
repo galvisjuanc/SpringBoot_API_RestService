@@ -1,0 +1,18 @@
+DeleteBook Api Contract:
+
+HTTP Request Type --> DELETE
+Name of the endpoint --> http://localhost:8080/deleteBook
+
+The resource in this case is --> /deleteBook
+
+Body/Payload in Postman:
+{
+    "id" : "c#1"
+}
+
+Logic Implementation: Book should be deleted from info_books table based on the id provided as input.
+On success, it should show below String Response to user:
+
+Response:
+
+Book was deleted.
