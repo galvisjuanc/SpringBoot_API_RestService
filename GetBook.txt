@@ -46,3 +46,13 @@ Response in Postman (200):
         "author": "Freda Godofreda"
     }
 ]
+
+GetBooks:
+
+HTTP Request Type --> GET
+Name of the endpoint --> http://localhost:8080/getBooks/
+
+The resource in this case is --> /getBooks
+
+Logic Implementation: Extract all the books details present in the info_books table 
+and send it in form of Json Response.

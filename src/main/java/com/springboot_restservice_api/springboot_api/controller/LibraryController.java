@@ -72,6 +72,11 @@ public class LibraryController {
 
     }
 
+    @GetMapping("/getBooks")
+    public List<Library> getAllBooks(){
+        return libraryRepository.findAll();
+    }
+
     @PutMapping("/updateBook/{id}")
     public ResponseEntity<Library> updateBookById(@PathVariable(value="id") String id, @RequestBody Library library) {
         
