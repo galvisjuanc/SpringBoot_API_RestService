@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -68,6 +69,20 @@ public class LibraryController {
     public List<Library> getBookByAuthorName(@RequestParam(value="authorname") String authorname) {
         return libraryRepository.findAllByAuthor(authorname);
 
+    }
+
+    @PutMapping("/updateBook/{id}")
+    public ResponseEntity<Library> updateBookById(@PathVariable(value="id") String id, @RequestBody Library library) {
+        
+        Library libraryFoundToBeUpdated = libraryRepository.findById(id).get();
+
+        libraryFoundToBeUpdated.setAisle(library.getAisle());
+        libraryFoundToBeUpdated.setAuthor(library.getAuthor());
+        libraryFoundToBeUpdated.setBook_name(library.getBook_name());
+
+        libraryRepository.save(libraryFoundToBeUpdated);
+
+        return new ResponseEntity<Library>(libraryFoundToBeUpdated,HttpStatus.OK);
     }
     
 }

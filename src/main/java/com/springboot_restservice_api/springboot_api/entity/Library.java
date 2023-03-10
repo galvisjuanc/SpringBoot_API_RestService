@@ -35,7 +35,7 @@ public class Library {
 
     public String getAuthor() {return author;}
 
-    public void setBookName(String book_name) {this.book_name = book_name;}
+    public void setBook_name(String book_name) {this.book_name = book_name;}
 
     public void setId(String id) {this.id = id;}
 

@@ -1,0 +1,25 @@
+UpdateBook Api Contract:
+
+HTTP Request Type --> PUT
+Name of the endpoint --> http://localhost:8080/updateBook/{ID}
+
+The resource in this case is --> /updateBook/{ID}
+
+Body/Payload in Postman:
+{
+    "aisle" : 2020,
+    "author" : "Freda Godofreda Freda",
+    "book_name" : "Best Songs Ever Vol 3" 
+}
+
+Logic Implementation: Book details should be updated as per the payload sent as input in info_books table.
+On succes, it should show below json response to user:
+
+Response in Postman (200):
+{
+    "id" : "studioghibi2020",
+    "isbn" : "studioghibi",
+    "aisle" : 2020,
+    "author" : "Freda Godofreda Freda",
+    "book_name" : "Best Songs Ever Vol 3" 
+}
