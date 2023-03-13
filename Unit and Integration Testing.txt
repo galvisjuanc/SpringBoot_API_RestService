@@ -1,0 +1,30 @@
+Unit/Integration Testing Springboot Apps using JUnit / Mockito / MockMvc / Rest Template / H2Database
+
+A unit test is a way of testing a unit - the smallest piece of code that can be logically isolated in a system.
+
+Core aspect in unit testing is the fact that you want to isolate your "class under test" from anything else in 
+the world.
+
+Junit is a framework that helps with writing and running your unit tests.
+
+You can mock all external dependencies which needed for your class using Mockito Framework.
+
+JUnit is the Java Library used to write tests (offers support for running tests and different extra helpers - like 
+setup and teardown methods, test sets, etc.).
+
+Mockito is a library that enables writing test using the mocking approach. Don't depend of other methods inside a method 
+that is going to be tested.
+
+We use @Mockbean to create and inject a mock for the class we want to use.
+
+Spanish Quote: Las pruebas unitarias permiten verificar el comportamiento de métodos dentro de una clase, para 
+comprobar que están entregando lo que deberían y no resultados errados. Si es una multiplicación de dos valores, y el 
+return del método devuelve siempre valores positivos porque usa los simbolos de valor absoluto, la prueba unitaria fallará 
+y eso permitirá entender que hay un bug en el método que debe resolverse.
+
+Adicionalmente, las pruebas deben estar aisladas. Esto se refiere a que no dependan de otros métodos para funcionar. Por eso,
+debe hacerse un mock o bosquejo de lo que dependa de esos métodos o funciones para hacer las pruebas sin depender de otros 
+métodos. Esto se hace con el framework de Mockito.
+
+Por otro lado, no se debe depender de bases de datos actuales cuando se hacen pruebas con las pruebas unit/integration.
+Hay que hacer un mock de la base de database. Esto se hace con H2Database.
