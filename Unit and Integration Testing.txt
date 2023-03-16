@@ -13,9 +13,7 @@ JUnit is the Java Library used to write tests (offers support for running tests 
 setup and teardown methods, test sets, etc.).
 
 Mockito is a library that enables writing test using the mocking approach. Don't depend of other methods inside a method 
-that is going to be tested.
-
-We use @Mockbean to create and inject a mock for the class we want to use.
+that is going to be tested. We use @Mockbean to create and inject a mock for the class we want to use.
 
 Spanish Quote: Las pruebas unitarias permiten verificar el comportamiento de métodos dentro de una clase, para 
 comprobar que están entregando lo que deberían y no resultados errados. Si es una multiplicación de dos valores, y el 
@@ -28,3 +26,15 @@ métodos. Esto se hace con el framework de Mockito.
 
 Por otro lado, no se debe depender de bases de datos actuales cuando se hacen pruebas con las pruebas unit/integration.
 Hay que hacer un mock de la base de database. Esto se hace con H2Database.
+
+Usando Mockito, se crean objetos y se llama al método, con el MockBean. Recordar que todo debe ser independiente y debe 
+crearse un Mock usando el when then return y el assertEquals para comprobar la lógica del código. En un repositorio, muchas veces 
+existen pruebas unitarias que mantienen la lógica de un código creado y deben dejarse establecidas para que cualquier cambio de 
+esa misma lógica, se pueda rastrear para comprobar lo que hace ahora y lo que no hace.
+
+Existe otro método para hacer test, que es llamar el servicio, el json. Esto es el MockMvc.
+
+Spring's MockMvc is another approach of testing which can be done without starting the server at all. Spring handles the incoming HTTP 
+request and send the mock request to your controller. That way, almost of the full stack is used, and your code will be called in exactly 
+the same way as if it were processing a real HTTP request but without the cost of starting the server.
+The @AutoCOnfigureMockMvc annotation should be used with combination of MockMvc to achieve this behaviour.

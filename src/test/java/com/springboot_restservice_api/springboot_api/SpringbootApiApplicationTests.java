@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import com.springboot_restservice_api.springboot_api.controller.LibraryController;
+import com.springboot_restservice_api.springboot_api.entity.AddResponse;
 import com.springboot_restservice_api.springboot_api.entity.Library;
 import com.springboot_restservice_api.springboot_api.repository.LibraryRepository;
 import com.springboot_restservice_api.springboot_api.service.LibraryService;
@@ -49,6 +50,10 @@ class SpringbootApiApplicationTests {
 		System.out.println(responseEntity.getStatusCode());
 		assertEquals(responseEntity.getStatusCode(),HttpStatus.CREATED);
 
+		AddResponse addResponse = (AddResponse) responseEntity.getBody();
+		assertEquals(library.getId(), addResponse.getId());
+		assertEquals("Book was added successfully", addResponse.getMsg());
+
 	}
 
 	@Test
@@ -60,6 +65,10 @@ class SpringbootApiApplicationTests {
 		ResponseEntity<?> responseEntity = libraryController.addBookImplementation(buildLibraryForTestPurposes());
 		System.out.println(responseEntity.getStatusCode());
 		assertEquals(responseEntity.getStatusCode(),HttpStatus.ACCEPTED);
+
+		AddResponse addResponse = (AddResponse) responseEntity.getBody();
+		assertEquals(library.getId(), addResponse.getId());
+		assertEquals("Book already exists", addResponse.getMsg());
 
 	}
 
