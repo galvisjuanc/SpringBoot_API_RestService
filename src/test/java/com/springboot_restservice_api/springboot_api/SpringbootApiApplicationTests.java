@@ -1,11 +1,13 @@
 package com.springboot_restservice_api.springboot_api;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import com.springboot_restservice_api.springboot_api.controller.LibraryController;
@@ -38,9 +40,26 @@ class SpringbootApiApplicationTests {
 	}
 
 	@Test
-	public void addBookTest(){
-		ResponseEntity responseEntity = libraryController.addBookImplementation(buildLibraryForTestPurposes());
+	public void addBookTestExists(){
+		
+		Library library = buildLibraryForTestPurposes();
+		when(libraryService.buildId(library.getIsbn(), library.getAisle())).thenReturn(library.getId());	// Mock Line 42 LibraryController
+		when(libraryService.checkBookAlreadyExists(library.getId())).thenReturn(false); 		// Mock Line 45 LibraryController
+		ResponseEntity<?> responseEntity = libraryController.addBookImplementation(buildLibraryForTestPurposes());
 		System.out.println(responseEntity.getStatusCode());
+		assertEquals(responseEntity.getStatusCode(),HttpStatus.CREATED);
+
+	}
+
+	@Test
+	public void addBookTestDoesNotExists(){
+		
+		Library library = buildLibraryForTestPurposes();
+		when(libraryService.buildId(library.getIsbn(), library.getAisle())).thenReturn(library.getId());	// Mock Line 42 LibraryController
+		when(libraryService.checkBookAlreadyExists(library.getId())).thenReturn(true); 		// Mock Line 45 LibraryController
+		ResponseEntity<?> responseEntity = libraryController.addBookImplementation(buildLibraryForTestPurposes());
+		System.out.println(responseEntity.getStatusCode());
+		assertEquals(responseEntity.getStatusCode(),HttpStatus.ACCEPTED);
 
 	}
 
