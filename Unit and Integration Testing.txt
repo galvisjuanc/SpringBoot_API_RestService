@@ -38,3 +38,8 @@ Spring's MockMvc is another approach of testing which can be done without starti
 request and send the mock request to your controller. That way, almost of the full stack is used, and your code will be called in exactly 
 the same way as if it were processing a real HTTP request but without the cost of starting the server.
 The @AutoCOnfigureMockMvc annotation should be used with combination of MockMvc to achieve this behaviour.
+
+NOTA IMPORTANTE:
+Cuando se agrega el framework de Spring Security, no se pueden hacer consultas en los endpoints, por el nivel de seguridad agregado.
+Para el MockMVC, seria bueno mirar cómo agregar ese token que el programa crea para que no se puedan hacer consultas.
+Cuando se retiró esa información, los tests funcionaron perfectamente.
