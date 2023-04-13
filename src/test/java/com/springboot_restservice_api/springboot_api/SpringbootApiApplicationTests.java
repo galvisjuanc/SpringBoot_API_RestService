@@ -64,7 +64,7 @@ class SpringbootApiApplicationTests {
 	}
 
 	@Test
-	public void addBookTestExists(){
+	public void addBookTestExists() throws Exception{
 		
 		Library library = buildLibraryForTestPurposes();
 		when(libraryService.buildId(library.getIsbn(), library.getAisle())).thenReturn(library.getId());	// Mock Line 42 LibraryController
@@ -75,9 +75,12 @@ class SpringbootApiApplicationTests {
 		assertEquals(responseEntity.getStatusCode(),HttpStatus.CREATED);
 
 		AddResponse addResponse = (AddResponse) responseEntity.getBody();
-		assertEquals(library.getId(), addResponse.getId());
-		assertEquals("Book was added successfully", addResponse.getMsg());
-
+		try {
+			assertEquals(library.getId(), addResponse.getId());
+			assertEquals("Book was added successfully", addResponse.getMsg());
+		} catch (Exception e) {
+			throw new Exception("The response was null");
+		}
 	}
 
 	@Test
